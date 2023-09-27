@@ -1,5 +1,6 @@
 """List of prime numbers generator."""
 """ENTER YOUR SOLUTION HERE!"""
+
 def check_prime(num, prime_list) -> bool:
     """Checks if a given number is a prime by comparing against existing prime numbers"""
     is_prime = True
@@ -13,9 +14,12 @@ def check_prime(num, prime_list) -> bool:
 
 def get_next_prime(existing_prime_list) -> int:
     """generates the next prime number, accoriding to the given list"""
+
+    # First prime in sequence
     num = 2
     while True:
         if check_prime(num, existing_prime_list):
+            # yield halts generator until called again
             yield num
             num += 1
         else:
@@ -23,8 +27,10 @@ def get_next_prime(existing_prime_list) -> int:
 
 
 def primes(number_of_primes:int):
+    # Checks if parameter is less than 1
     if number_of_primes < 1:
         raise ValueError
+    # Checks if parameter is an integer
     if number_of_primes.as_integer_ratio()[1] > 1:
         raise ValueError
     list = []
