@@ -27,6 +27,8 @@ def get_next_prime(existing_prime_list) -> int:
 
 
 def primes(number_of_primes:int):
+    """Generates a list of prime numbers up to a given size"""
+    
     # Checks if parameter is less than 1
     if number_of_primes < 1:
         raise ValueError
